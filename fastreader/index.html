@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/reset.css" rel="stylesheet">
+	<script src="js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<section class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 offset-xl-2 text-center">
+					<div class="main-content">
+						<div class="section-header">	
+							<h1>Читай любые текста в разы быстрее!</h1>
+						</div>
+						<button type="button" class="btn btn-dark main-btn">Попробовать</button>
+						<div class="example-block">
+							<p class="example" id="example">Пример</p>
+							<button id="example-button" onclick="example()" type="button" class="btn btn-dark main-btn example-button">Воспроизвести</button>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="section-header text-center">	
+					<h1>Как это работает?</h1>
+				</div>
+				<div class="intro-text-block">
+					<p class="intro-text">Средняя скорость чтения в России состовляет от 120 до 180 слов в минуту. С помощью нашего способа, Любой человек умеющий читать не по слогам, сможет читать текст со скоростью 120 слов в минуту. А среднестатистический человек сможет комфортно читать текст со скоростью от 250 слов в минуту!
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, excepturi cumque nisi cupiditate quod molestiae totam impedit accusantium temporibus voluptatibus vitae facilis et ex numquam atque necessitatibus architecto voluptate fugiat dolorem pariatur mollitia delectus maxime repudiandae amet? Sapiente tempora similique eos repudiandae aut voluptas et nostrum, porro suscipit, neque. Voluptas voluptatibus dolorum nam aliquam dolor nostrum deleniti iure eius! Odio eaque doloribus, debitis, aliquam explicabo veritatis, quaerat corrupti perferendis placeat distinctio fugiat libero hic facere voluptatibus voluptatem. Maiores cupiditate nulla officia eum adipisci, et animi sequi eaque nobis, ut earum esse error nostrum! Esse non modi ut, corrupti commodi recusandae.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="reader">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 offset-xl-2">
+					<div class="reader-block text-center">
+						<h1 class="reader-header">Введите текст, выберите скорость, и нажмите кнопку</h1>
+						<form>
+						    <input id="input-text" type="text" rows="2" class="form-control reader-input">
+						</form>
+						<p class="reader-speed-current">Скорость: <span id="curSpeed">240</span> слов/мин</p>
+						<div class="reader-speed">
+							<div class="row">
+								<div class="col-xl-4">
+									<button onclick="setSmSpeed()" class="btn btn-dark main-btn reader-speed-btn">120 слов/мин</button>
+									<p class="reader-speed-info">Малая</p>
+								</div>
+								<div class="col-xl-4 text-center">
+									<button onclick="setMdSpeed()" class="btn btn-dark main-btn reader-speed-btn">240 слов/мин</button>
+									<p class="reader-speed-info">Средняя</p>
+								</div>
+								<div class="col-xl-4 text-center">
+									<button onclick="setLgSpeed()" class="btn btn-dark main-btn reader-speed-btn">300 слов/мин</button>
+									<p class="reader-speed-info">Высокая</p>
+								</div>
+							</div>
+						</div>
+						<button onclick="textInput()" class="btn btn-dark main-btn reader-btn popup-btn">КНОПКА</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="popup">
+	  <div class="popup-dialog">
+	    <div class="popup-content">
+	      <button class="popup-close">&times;</button>
+	      	<div class="popup-text align-items-center">	
+			 <p id="text" class="reader-text"></p>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<script>
+    $('.popup-btn').on('click' , function(event){
+       event.preventDefault();
+       $('.popup').fadeIn();
+      });
+    $('.popup-close').on('click', function(event) {
+        event.preventDefault();
+        $('.popup').fadeOut();
+       });
+   </script>
+   
+    </body>
+</html>
